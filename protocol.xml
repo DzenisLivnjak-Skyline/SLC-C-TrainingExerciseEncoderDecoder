@@ -1002,12 +1002,26 @@ Any inquiries can be addressed to:
 			<On id="56">parameter</On>
 			<Time>change</Time>
 			<Type>action</Type>
-			<Condition><![CDATA[id:56 == 0]]></Condition>
+			<Condition><![CDATA[id:56 == 1]]></Condition>
 			<Content>
 				<Id>4210</Id>
 				<Id else="true">4200</Id>
 			</Content>
 		</Trigger>
+
+		<Trigger id="502">
+			<Name>Chroma Weight</Name>
+			<On id="58">parameter</On>
+			<Time>change</Time>
+			<Type>action</Type>
+			<Condition><![CDATA[id:58 == 0]]></Condition>
+			<Content>
+				<Id>372</Id>
+				<Id>162</Id>
+				<Id else="true">312</Id>
+			</Content>
+		</Trigger>
+
 
 	</Triggers>
 
@@ -1156,6 +1170,12 @@ Any inquiries can be addressed to:
 			<On id="6">parameter</On>
 			<Type id="202">copy</Type>
 		</Action>
+		<Action id="372">
+			<Name>Save Enc ChromaWeight (AutoChroma off)</Name>
+			<On id="212">parameter</On>
+			<Type id="9">copy</Type>
+		</Action>
+
 		<Action id="4100">
 			<Name>Encoder Off Group</Name>
 			<On id="410">group</On>
@@ -1177,7 +1197,6 @@ Any inquiries can be addressed to:
 			<On id="421">group</On>
 			<Type>execute next</Type>
 		</Action>
-
 
 
 	</Actions>
@@ -1207,8 +1226,6 @@ Any inquiries can be addressed to:
 	</Timers>
 
 	<PortSettings name="Virtual Connection" />
-something
-
 	<VersionHistory>
 		<Branches>
 			<Branch id="1">
