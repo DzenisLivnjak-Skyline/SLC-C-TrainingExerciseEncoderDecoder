@@ -45,7 +45,7 @@ Any inquiries can be addressed to:
 -->
 
 <Protocol xmlns="http://www.skyline.be/protocol">
-	<Name>Exercise Encoder/Decoder</Name>
+	<Name>Exercise EncoderDecoder</Name>
 	<Description>Exercise Encoder/Decoder DataMiner connector</Description>
 	<Version>1.0.0.1</Version>
 	<IntegrationID>DMS-DRV-00</IntegrationID>
@@ -55,16 +55,16 @@ Any inquiries can be addressed to:
 	<DeviceOID>0</DeviceOID>
 	<ElementType>EncoderDecoder</ElementType>
 	<Type relativeTimers="true">virtual</Type>
-	<Display defaultPage="General" pageOrder="General"/>
+	<Display defaultPage="General" pageOrder="General" wideColumnPages=""/>
 	<SNMP includepages="true">auto</SNMP>
 
 	<Compliancies>
 		<CassandraReady>true</CassandraReady>
-		<MinimumRequiredVersion>10.1.0.0 - 9966</MinimumRequiredVersion>
+		<MinimumRequiredVersion>10.3.0.0 - 12752</MinimumRequiredVersion>
 	</Compliancies>
 
 	<Params>
-
+		
 		<Param id="1">
 			<Name>encoderTitleBegin</Name>
 			<Description>Encoder</Description>
@@ -140,7 +140,7 @@ Any inquiries can be addressed to:
 			<Description>After Startup</Description>
 			<Type>dummy</Type>
 		</Param>
-
+		
 		<Param id="5">
 			<Name>encoderStatus</Name>
 			<Description>Status</Description>
@@ -180,7 +180,7 @@ Any inquiries can be addressed to:
 		</Param>
 		<Param id="55" setter="true">
 			<Name>encoderStatus</Name>
-			<Description>Encoderstatus</Description>
+			<Description>Status</Description>
 			<Type>write</Type>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -211,8 +211,9 @@ Any inquiries can be addressed to:
 				</Discreets>
 			</Measurement>
 		</Param>
-
-		<Param id="7">
+		
+		
+		<Param id="7" trending="true">
 			<Name>encoderCurrentCompressedBitrate</Name>
 			<Description>Current Compressed Bitrate</Description>
 			<Type>read</Type>
@@ -233,7 +234,7 @@ Any inquiries can be addressed to:
 				</Exceptions>
 			</Interprete>
 			<Alarm>
-				<Monitored>true</Monitored>
+				<Monitored>false</Monitored>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -255,7 +256,7 @@ Any inquiries can be addressed to:
 				<Type>analog</Type>
 			</Measurement>
 		</Param>
-		<Param id="8">
+		<Param id="8" trending="true">
 			<Name>autoChromaWeight</Name>
 			<Description>Auto Chroma Weight</Description>
 			<Type>read</Type>
@@ -275,7 +276,7 @@ Any inquiries can be addressed to:
 				</Exceptions>
 			</Interprete>
 			<Alarm>
-				<Monitored>true</Monitored>
+				<Monitored>false</Monitored>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -334,7 +335,7 @@ Any inquiries can be addressed to:
 				</Discreets>
 			</Measurement>
 		</Param>
-		<Param id="9">
+		<Param id="9" trending="true">
 			<Name>ChromaWeight</Name>
 			<Description>Chroma Weight</Description>
 			<Type>read</Type>
@@ -354,7 +355,7 @@ Any inquiries can be addressed to:
 				</Exceptions>
 			</Interprete>
 			<Alarm>
-				<Monitored>true</Monitored>
+				<Monitored>false</Monitored>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -403,8 +404,8 @@ Any inquiries can be addressed to:
 				<Type>analog</Type>
 			</Measurement>
 		</Param>
-
-		<Param id="10">
+		
+		<Param id="10" trending="true">
 			<Name>losslessMode</Name>
 			<Description>Lossless Mode</Description>
 			<Type>read</Type>
@@ -424,7 +425,7 @@ Any inquiries can be addressed to:
 				</Exceptions>
 			</Interprete>
 			<Alarm>
-				<Monitored>true</Monitored>
+				<Monitored>false</Monitored>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -483,7 +484,7 @@ Any inquiries can be addressed to:
 				</Discreets>
 			</Measurement>
 		</Param>
-
+		
 		<Param id="6">
 			<Name>decoderStatus</Name>
 			<Description>Decoder Status</Description>
@@ -554,7 +555,7 @@ Any inquiries can be addressed to:
 				</Discreets>
 			</Measurement>
 		</Param>
-
+		
 		<Param id="11">
 			<Name>decoderCurrentCompressedBitrate</Name>
 			<Description>Decoder Current Compressed Bitrate</Description>
@@ -650,7 +651,7 @@ Any inquiries can be addressed to:
 				</Discreets>
 			</Measurement>
 		</Param>
-
+		
 		<Param id="62" setter="true">
 			<Name>progressionOrder</Name>
 			<Description>Progression Order</Description>
@@ -696,11 +697,14 @@ Any inquiries can be addressed to:
 				</Discreets>
 			</Measurement>
 		</Param>
-
+		
 		<Param id="13">
 			<Name>codeBlockWidth</Name>
 			<Description>Code Block Width</Description>
 			<Type>read</Type>
+			<Information>
+				<Subtext>Indicates the width of the code blocks used during decoding.</Subtext>
+			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
@@ -736,6 +740,9 @@ Any inquiries can be addressed to:
 			<Name>codeBlockHeight</Name>
 			<Description>Code Block Height</Description>
 			<Type>read</Type>
+			<Information>
+				<Subtext>Indicates the height of the code blocks used during decoding.</Subtext>
+			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
@@ -767,8 +774,8 @@ Any inquiries can be addressed to:
 				<Type>analog</Type>
 			</Measurement>
 		</Param>
-
-
+		
+		
 		<Param id="200">
 			<Name>fixedMinusOne</Name>
 			<Description>Fixed Minus One</Description>
@@ -855,12 +862,10 @@ Any inquiries can be addressed to:
 				<DefaultValue>1</DefaultValue>
 			</Interprete>
 		</Param>
-
+		
 	</Params>
 
 	<QActions>
-		<QAction id="1" name="Precompiled Code" encoding="csharp" options="precompile" />
-		<QAction id="2" name="After Startup" encoding="csharp" triggers="2" />
 	</QActions>
 
 	<Groups>
