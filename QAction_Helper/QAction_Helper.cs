@@ -78,6 +78,26 @@ public static class Parameter
 	public const int lossless_213 = 213;
 	/// <summary>PID: 213 | Type: read</summary>
 	public const int lossless = 213;
+	/// <summary>PID: 214 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int decbitratedummy_214 = 214;
+	/// <summary>PID: 214 | Type: read</summary>
+	public const int decbitratedummy = 214;
+	/// <summary>PID: 215 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int decprogorderdummy_215 = 215;
+	/// <summary>PID: 215 | Type: read</summary>
+	public const int decprogorderdummy = 215;
+	/// <summary>PID: 216 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int decwidthdummy_216 = 216;
+	/// <summary>PID: 216 | Type: read</summary>
+	public const int decwidthdummy = 216;
+	/// <summary>PID: 217 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int decheightdummy_217 = 217;
+	/// <summary>PID: 217 | Type: read</summary>
+	public const int decheightdummy = 217;
 	public class Write
 	{
 		/// <summary>PID: 55 | Type: write</summary>
@@ -175,6 +195,14 @@ public interface SLProtocolExt : SLProtocol
 	object Chromaweightdummy { get; set; }
 	object Lossless_213 { get; set; }
 	object Lossless { get; set; }
+	object Decbitratedummy_214 { get; set; }
+	object Decbitratedummy { get; set; }
+	object Decprogorderdummy_215 { get; set; }
+	object Decprogorderdummy { get; set; }
+	object Decwidthdummy_216 { get; set; }
+	object Decwidthdummy { get; set; }
+	object Decheightdummy_217 { get; set; }
+	object Decheightdummy { get; set; }
 	object Afterstartup_dummy { get; set; }
 	WriteParameters Write { get; set; }
 }
@@ -282,6 +310,26 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Lossless_213 {get { return GetParameter(213); }set { SetParameter(213, value); }}
 	/// <summary>PID: 213  | Type: read</summary>
 	public System.Object Lossless {get { return GetParameter(213); }set { SetParameter(213, value); }}
+	/// <summary>PID: 214  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Decbitratedummy_214 {get { return GetParameter(214); }set { SetParameter(214, value); }}
+	/// <summary>PID: 214  | Type: read</summary>
+	public System.Object Decbitratedummy {get { return GetParameter(214); }set { SetParameter(214, value); }}
+	/// <summary>PID: 215  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Decprogorderdummy_215 {get { return GetParameter(215); }set { SetParameter(215, value); }}
+	/// <summary>PID: 215  | Type: read</summary>
+	public System.Object Decprogorderdummy {get { return GetParameter(215); }set { SetParameter(215, value); }}
+	/// <summary>PID: 216  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Decwidthdummy_216 {get { return GetParameter(216); }set { SetParameter(216, value); }}
+	/// <summary>PID: 216  | Type: read</summary>
+	public System.Object Decwidthdummy {get { return GetParameter(216); }set { SetParameter(216, value); }}
+	/// <summary>PID: 217  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Decheightdummy_217 {get { return GetParameter(217); }set { SetParameter(217, value); }}
+	/// <summary>PID: 217  | Type: read</summary>
+	public System.Object Decheightdummy {get { return GetParameter(217); }set { SetParameter(217, value); }}
 	/// <summary>PID: 1000  | Type: dummy</summary>
 	public System.Object Afterstartup_dummy {get { return GetParameter(1000); }set { SetParameter(1000, value); }}
 	public WriteParameters Write { get; set; }

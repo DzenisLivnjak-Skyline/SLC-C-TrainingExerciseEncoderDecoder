@@ -45,7 +45,7 @@ Any inquiries can be addressed to:
 -->
 
 <Protocol xmlns="http://www.skyline.be/protocol">
-	<Name>Exercise EncoderDecoder</Name>
+	<Name>Exercise Encoder Decoder</Name>
 	<Description>Exercise Encoder/Decoder DataMiner connector</Description>
 	<Version>1.0.0.1</Version>
 	<IntegrationID>DMS-DRV-00</IntegrationID>
@@ -64,7 +64,6 @@ Any inquiries can be addressed to:
 	</Compliancies>
 
 	<Params>
-		
 		<Param id="1">
 			<Name>encoderTitleBegin</Name>
 			<Description>Encoder</Description>
@@ -862,6 +861,50 @@ Any inquiries can be addressed to:
 				<DefaultValue>1</DefaultValue>
 			</Interprete>
 		</Param>
+		<Param id="214">
+			<Name>decBitrateDummy</Name>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<Decimals>3</Decimals>
+				<LengthType>next param</LengthType>
+				<DefaultValue>500</DefaultValue>
+			</Interprete>
+		</Param>
+
+		<Param id="215">
+			<Name>decProgOrderDummy</Name>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<DefaultValue>0</DefaultValue>
+			</Interprete>
+		</Param>
+
+		<Param id="216">
+			<Name>decWidthDummy</Name>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<DefaultValue>64</DefaultValue>
+			</Interprete>
+		</Param>
+		
+		<Param id="217">
+			<Name>decHeightDummy</Name>
+			<Type>read</Type>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<DefaultValue>64</DefaultValue>
+			</Interprete>
+		</Param>
 		
 	</Params>
 
@@ -877,21 +920,57 @@ Any inquiries can be addressed to:
 				<Action>2</Action>
 			</Content>
 		</Group>
-		<Group id="10">
+		<Group id="410">
 			<Name>encoderOff</Name>
 			<Type>action</Type>
 			<Content>
-				<Action>151</Action>
-				<Action>160</Action>
+				<Action>330</Action>
+				<Action>331</Action>
+				<Action>332</Action>
+				<Action>333</Action>
+				<Action>361</Action>
+				<Action>350</Action>
 			</Content>
 		</Group>
-		<Group id="11">
+
+		<Group id="411">
 			<Name>encoderOn</Name>
 			<Type>action</Type>
 			<Content>
-				<Action>150</Action>
+				<Action>360</Action>
+				<Action>310</Action>
+				<Action>311</Action>
+				<Action>312</Action>
+				<Action>313</Action>
 			</Content>
 		</Group>
+
+		<Group id="420">
+			<Name>decoderOff</Name>
+			<Type>action</Type>
+			<Content>
+				<Action>340</Action>
+				<Action>341</Action>
+				<Action>342</Action>
+				<Action>343</Action>
+				<Action>363</Action>
+				<Action>351</Action>
+			</Content>
+		</Group>
+
+		<Group id="421">
+			<Name>decoderOn</Name>
+			<Type>action</Type>
+			<Content>
+				<Action>362</Action>
+				<Action>320</Action>
+				<Action>321</Action>
+				<Action>322</Action>
+				<Action>323</Action>
+			</Content>
+		</Group>
+
+
 
 	</Groups>
 
@@ -905,6 +984,31 @@ Any inquiries can be addressed to:
 				<Id>1</Id>
 			</Content>
 		</Trigger>
+		<Trigger id="500">
+			<Name>Encoder Toggle</Name>
+			<On id="55">parameter</On>
+			<Time>change</Time>
+			<Type>action</Type>
+			<Condition><![CDATA[id:55 == 1]]></Condition>
+			<Content>
+				<Id>4110</Id>
+				<Id else="true">4100</Id>
+			</Content>
+		</Trigger>
+
+
+		<Trigger id="501">
+			<Name>Decoder Toggle</Name>
+			<On id="56">parameter</On>
+			<Time>change</Time>
+			<Type>action</Type>
+			<Condition><![CDATA[id:56 == 0]]></Condition>
+			<Content>
+				<Id>4210</Id>
+				<Id else="true">4200</Id>
+			</Content>
+		</Trigger>
+
 	</Triggers>
 
 	<Actions>
@@ -918,57 +1022,162 @@ Any inquiries can be addressed to:
 			<On id="2">parameter</On>
 			<Type>run actions</Type>
 		</Action>
-		<Action id="160">
-			<Name>Encoder Data NotAvailable</Name>
-			<On id="7;8;9;10">parameter</On>
-			<Type id="200">copy</Type>
-		</Action>
-
-		<Action id="161">
-			<Name>Decoder Data NotAvailable</Name>
-			<On id="11;12;13;14">parameter</On>
-			<Type id="200">copy</Type>
-		</Action>
-
 		<Action id="162">
 			<Name>Chroma Weight NotAvailable</Name>
 			<On id="9">parameter</On>
 			<Type id="200">copy</Type>
 		</Action>
-		<Action id="150">
+		<Action id="310">
+			<Name>Restore Enc Bitrate</Name>
+			<On id="7">parameter</On>
+			<Type id="210">copy</Type>
+		</Action>
+		
+		<Action id="311">
+			<Name>Restore Enc AutoChroma</Name>
+			<On id="8">parameter</On>
+			<Type id="211">copy</Type>
+		</Action>
+		
+		<Action id="312">
+			<Name>Restore Enc ChromaWeight</Name>
+			<On id="9">parameter</On>
+			<Type id="212">copy</Type>
+		</Action>
+		
+		<Action id="313">
+			<Name>Restore Enc Lossless</Name>
+			<On id="10">parameter</On>
+			<Type id="213">copy</Type>
+		</Action>
+		
+		<Action id="320">
+			<Name>Restore Dec Bitrate</Name>
+			<On id="11">parameter</On>
+			<Type id="214">copy</Type>
+		</Action>
+		
+		<Action id="321">
+			<Name>Restore Dec ProgOrder</Name>
+			<On id="12">parameter</On>
+			<Type id="215">copy</Type>
+		</Action>
+		
+		<Action id="322">
+			<Name>Restore Dec Width</Name>
+			<On id="13">parameter</On>
+			<Type id="216">copy</Type>
+		</Action>
+		
+		<Action id="323">
+			<Name>Restore Dec Height</Name>
+			<On id="14">parameter</On>
+			<Type id="217">copy</Type>
+		</Action>
+		
+		<Action id="330">
+			<Name>Save Enc Bitrate</Name>
+			<On id="210">parameter</On>
+			<Type id="7">copy</Type>
+		</Action>
+		
+		<Action id="331">
+			<Name>Save Enc AutoChroma</Name>
+			<On id="211">parameter</On>
+			<Type id="8">copy</Type>
+		</Action>
+		
+		<Action id="332">
+			<Name>Save Enc ChromaWeight</Name>
+			<On id="212">parameter</On>
+			<Type id="9">copy</Type>
+		</Action>
+		
+		<Action id="333">
+			<Name>Save Enc Lossless</Name>
+			<On id="213">parameter</On>
+			<Type id="10">copy</Type>
+		</Action>
+		
+		<Action id="340">
+			<Name>Save Dec Bitrate</Name>
+			<On id="214">parameter</On>
+			<Type id="11">copy</Type>
+		</Action>
+		
+		<Action id="341">
+			<Name>Save Dec ProgOrder</Name>
+			<On id="215">parameter</On>
+			<Type id="12">copy</Type>
+		</Action>
+		
+		<Action id="342">
+			<Name>Save Dec Width</Name>
+			<On id="216">parameter</On>
+			<Type id="13">copy</Type>
+		</Action>
+		
+		<Action id="343">
+			<Name>Save Dec Height</Name>
+			<On id="217">parameter</On>
+			<Type id="14">copy</Type>
+		</Action>
+
+		<Action id="350">
+			<Name>Encoder Data NotAvailable</Name>
+			<On id="7;8;9;10">parameter</On>
+			<Type id="200">copy</Type>
+		</Action>
+
+		<Action id="351">
+			<Name>Decoder Data NotAvailable</Name>
+			<On id="11;12;13;14">parameter</On>
+			<Type id="200">copy</Type>
+		</Action>
+		
+		<Action id="360">
 			<Name>Set Encoder Status On</Name>
 			<On id="5">parameter</On>
 			<Type id="201">copy</Type>
 		</Action>
-
-		<Action id="151">
+		<Action id="361">
 			<Name>Set Encoder Status Off</Name>
 			<On id="5">parameter</On>
 			<Type id="202">copy</Type>
 		</Action>
 
-		<Action id="152">
+		<Action id="362">
 			<Name>Set Decoder Status On</Name>
 			<On id="6">parameter</On>
 			<Type id="201">copy</Type>
 		</Action>
-
-		<Action id="153">
+		<Action id="363">
 			<Name>Set Decoder Status Off</Name>
 			<On id="6">parameter</On>
 			<Type id="202">copy</Type>
 		</Action>
-		<Action id="170">
+		<Action id="4100">
 			<Name>Encoder Off Group</Name>
-			<On id="10">group</On>
+			<On id="410">group</On>
+			<Type>execute next</Type>
+		</Action>
+		<Action id="4110">
+			<Name>Encoder On Group</Name>
+			<On id="411">group</On>
 			<Type>execute next</Type>
 		</Action>
 
-		<Action id="171">
-			<Name>Encoder On Group</Name>
-			<On id="11">group</On>
+		<Action id="4200">
+			<Name>Decoder Off Group</Name>
+			<On id="420">group</On>
 			<Type>execute next</Type>
 		</Action>
+		<Action id="4210">
+			<Name>Decoder On Group</Name>
+			<On id="421">group</On>
+			<Type>execute next</Type>
+		</Action>
+
 
 
 	</Actions>
@@ -997,8 +1206,8 @@ Any inquiries can be addressed to:
 		</Timer>
 	</Timers>
 
-	<PortSettings>
-	</PortSettings>
+	<PortSettings name="Virtual Connection" />
+something
 
 	<VersionHistory>
 		<Branches>
