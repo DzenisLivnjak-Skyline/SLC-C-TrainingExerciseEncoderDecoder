@@ -82,6 +82,7 @@ Any inquiries can be addressed to:
 				<Type options="begin">title</Type>
 			</Measurement>
 		</Param>
+		
 		<Param id="2">
 			<Name>encoderTitleEnd</Name>
 			<Type>fixed</Type>
@@ -99,6 +100,7 @@ Any inquiries can be addressed to:
 				<Type options="end">title</Type>
 			</Measurement>
 		</Param>
+		
 		<Param id="3">
 			<Name>decoderTitleBegin</Name>
 			<Description>Decoder</Description>
@@ -117,6 +119,7 @@ Any inquiries can be addressed to:
 				<Type options="begin">title</Type>
 			</Measurement>
 		</Param>
+		
 		<Param id="4">
 			<Name>decoderTitleEnd</Name>
 			<Type>fixed</Type>
@@ -134,11 +137,13 @@ Any inquiries can be addressed to:
 				<Type options="end">title</Type>
 			</Measurement>
 		</Param>
+		
 		<Param id="1000">
 			<Name>AfterStartup</Name>
 			<Description>After Startup</Description>
 			<Type>dummy</Type>
 		</Param>
+		
 		<Param id="5">
 			<Name>encoderStatus</Name>
 			<Description>Encoder Status</Description>
@@ -152,6 +157,10 @@ Any inquiries can be addressed to:
 				<LengthType>next param</LengthType>
 				<DefaultValue>1</DefaultValue>
 			</Interprete>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<Normal>0;1</Normal>
+			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Positions>
@@ -176,6 +185,7 @@ Any inquiries can be addressed to:
 				</Discreets>
 			</Measurement>
 		</Param>
+		
 		<Param id="55" setter="true">
 			<Name>encoderStatus</Name>
 			<Description>Encoder Status</Description>
@@ -232,6 +242,13 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>550</Normal>
+				<CL>0</CL>
+				<MaL>1</MaL>
+				<MiL>2</MiL>
+				<MiH>140</MiH>
+				<MaH>520</MaH>
+				<CH>880</CH>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -253,6 +270,7 @@ Any inquiries can be addressed to:
 				<Type>analog</Type>
 			</Measurement>
 		</Param>
+		
 		<Param id="8" trending="true">
 			<Name>autoChromaWeight</Name>
 			<Description>Auto Chroma Weight</Description>
@@ -274,6 +292,7 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>0;1</Normal>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -299,6 +318,7 @@ Any inquiries can be addressed to:
 				</Discreets>
 			</Measurement>
 		</Param>
+		
 		<Param id="58" setter="true">
 			<Name>autoChromaWeight</Name>
 			<Description>Auto Chroma Weight</Description>
@@ -332,6 +352,7 @@ Any inquiries can be addressed to:
 				</Discreets>
 			</Measurement>
 		</Param>
+		
 		<Param id="9" trending="true">
 			<Name>ChromaWeight</Name>
 			<Description>Chroma Weight</Description>
@@ -353,6 +374,13 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>20</Normal>
+				<CL>0</CL>
+				<MaL>3</MaL>
+				<MiL>7</MiL>
+				<MiH>85</MiH>
+				<MaH>93</MaH>
+				<CH>97</CH>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -373,6 +401,7 @@ Any inquiries can be addressed to:
 				<Type>analog</Type>
 			</Measurement>
 		</Param>
+		
 		<Param id="59" setter="true">
 			<Name>ChromaWeight</Name>
 			<Description>Chroma Weight</Description>
@@ -423,6 +452,7 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>0;1</Normal>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -448,6 +478,7 @@ Any inquiries can be addressed to:
 				</Discreets>
 			</Measurement>
 		</Param>
+		
 		<Param id="60" setter="true">
 			<Name>losslessMode</Name>
 			<Description>Lossless Mode</Description>
@@ -495,6 +526,10 @@ Any inquiries can be addressed to:
 				<DefaultValue>0</DefaultValue>
 				<LengthType>next param</LengthType>
 			</Interprete>
+			<Alarm>
+				<Monitored>true</Monitored>
+				<Normal>0;1</Normal>
+			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Positions>
@@ -519,6 +554,7 @@ Any inquiries can be addressed to:
 				</Discreets>
 			</Measurement>
 		</Param>
+		
 		<Param id="56" setter="true">
 			<Name>decoderStatus</Name>
 			<Description>Decoder Status</Description>
@@ -575,6 +611,13 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>500</Normal>
+				<CL>0</CL>
+				<MaL>0.2</MaL>
+				<MiL>2</MiL>
+				<MiH>150</MiH>
+				<MaH>560</MaH>
+				<CH>920</CH>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -596,6 +639,7 @@ Any inquiries can be addressed to:
 				<Type>analog</Type>
 			</Measurement>
 		</Param>
+		
 		<Param id="12">
 			<Name>progressionOrder</Name>
 			<Description>Progression Order</Description>
@@ -617,6 +661,7 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>0;1;2;3;4</Normal>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -653,7 +698,7 @@ Any inquiries can be addressed to:
 					</Discreet>
 				</Discreets>
 			</Measurement>
-		</Param>
+		</Param>	
 		
 		<Param id="62" setter="true">
 			<Name>progressionOrder</Name>
@@ -722,6 +767,13 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>64</Normal>
+				<CL>0</CL>
+				<MaL>6</MaL>
+				<MiL>12</MiL>
+				<MiH>880</MiH>
+				<MaH>970</MaH>
+				<CH>995</CH>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -742,6 +794,7 @@ Any inquiries can be addressed to:
 				<Type>analog</Type>
 			</Measurement>
 		</Param>
+		
 		<Param id="14">
 			<Name>codeBlockHeight</Name>
 			<Description>Code Block Height</Description>
@@ -763,6 +816,13 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>64</Normal>
+				<CL>0</CL>
+				<MaL>6</MaL>
+				<MiL>12</MiL>
+				<MiH>880</MiH>
+				<MaH>970</MaH>
+				<CH>995</CH>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -782,8 +842,7 @@ Any inquiries can be addressed to:
 			<Measurement>
 				<Type>analog</Type>
 			</Measurement>
-		</Param>
-		
+		</Param>	
 		
 		<Param id="200">
 			<Name>fixedMinusOne</Name>
@@ -800,6 +859,7 @@ Any inquiries can be addressed to:
 				<Value>-1</Value>
 			</Interprete>
 		</Param>
+		
 		<Param id="201">
 			<Name>fixedOne</Name>
 			<Description>Fixed One</Description>
@@ -815,6 +875,7 @@ Any inquiries can be addressed to:
 				<Value>1</Value>
 			</Interprete>
 		</Param>
+		
 		<Param id="202">
 			<Name>fixedZero</Name>
 			<Description>Fixed Zero</Description>
@@ -830,6 +891,7 @@ Any inquiries can be addressed to:
 				<Value>0</Value>
 			</Interprete>
 		</Param>
+		
 		<Param id="210">
 			<Name>bitrateDummy</Name>
 			<Type>read</Type>
@@ -841,6 +903,7 @@ Any inquiries can be addressed to:
 				<Decimals>3</Decimals>
 			</Interprete>
 		</Param>
+		
 		<Param id="211">
 			<Name>autChromaDummy</Name>
 			<Type>read</Type>
@@ -851,6 +914,7 @@ Any inquiries can be addressed to:
 				<DefaultValue>1</DefaultValue>
 			</Interprete>
 		</Param>
+		
 		<Param id="212">
 			<Name>chromaWeightDummy</Name>
 			<Type>read</Type>
@@ -861,6 +925,7 @@ Any inquiries can be addressed to:
 				<DefaultValue>20</DefaultValue>
 			</Interprete>
 		</Param>
+		
 		<Param id="213">
 			<Name>lossLess</Name>
 			<Type>read</Type>
@@ -871,6 +936,7 @@ Any inquiries can be addressed to:
 				<DefaultValue>1</DefaultValue>
 			</Interprete>
 		</Param>
+		
 		<Param id="214">
 			<Name>decBitrateDummy</Name>
 			<Type>read</Type>
@@ -915,14 +981,10 @@ Any inquiries can be addressed to:
 				<DefaultValue>64</DefaultValue>
 			</Interprete>
 		</Param>
-		
-
-
-
+	
 	</Params>
 
 	<QActions>
-
 	</QActions>
 
 	<Groups>
@@ -934,6 +996,7 @@ Any inquiries can be addressed to:
 				<Action>2</Action>
 			</Content>
 		</Group>
+		
 		<Group id="410">
 			<Name>encoderOff</Name>
 			<Type>action</Type>
@@ -953,7 +1016,7 @@ Any inquiries can be addressed to:
 			<Content>
 				<Action>360</Action>
 				<Action>374</Action>
-				<Action>4200</Action>
+				<Action>420</Action>
 				<Action>310</Action>
 				<Action>311</Action>
 				<Action>312</Action>
@@ -961,9 +1024,7 @@ Any inquiries can be addressed to:
 				<Action>351</Action>
 			</Content>
 		</Group>
-
-
-
+		
 		<Group id="420">
 			<Name>decoderOff</Name>
 			<Type>action</Type>
@@ -973,11 +1034,7 @@ Any inquiries can be addressed to:
 				<Action>351</Action>
 			</Content>
 		</Group>
-
-
-
-
-
+		
 		<Group id="421">
 			<Name>decoderOn</Name>
 			<Type>action</Type>
@@ -991,12 +1048,6 @@ Any inquiries can be addressed to:
 			</Content>
 		</Group>
 
-
-
-
-
-
-
 	</Groups>
 
 	<Triggers>
@@ -1009,6 +1060,7 @@ Any inquiries can be addressed to:
 				<Id>1</Id>
 			</Content>
 		</Trigger>
+		
 		<Trigger id="500">
 			<Name>Encoder Toggle</Name>
 			<On id="55">parameter</On>
@@ -1016,8 +1068,8 @@ Any inquiries can be addressed to:
 			<Type>action</Type>
 			<Condition><![CDATA[id:55 == 1]]></Condition>
 			<Content>
-				<Id>4110</Id>
-				<Id else="true">4100</Id>
+				<Id>411</Id>
+				<Id else="true">410</Id>
 			</Content>
 		</Trigger>
 
@@ -1028,12 +1080,10 @@ Any inquiries can be addressed to:
 			<Type>action</Type>
 			<Condition><![CDATA[id:56 == 1]]></Condition>
 			<Content>
-				<Id>4210</Id>
-				<Id else="true">4200</Id>
+				<Id>421</Id>
+				<Id else="true">420</Id>
 			</Content>
 		</Trigger>
-
-
 
 		<Trigger id="502">
 			<Name>Chroma Weight</Name>
@@ -1067,16 +1117,19 @@ Any inquiries can be addressed to:
 			<On id="2">group</On>
 			<Type>execute next</Type>
 		</Action>
+		
 		<Action id="2">
 			<Name>After Startup QAction</Name>
 			<On id="2">parameter</On>
 			<Type>run actions</Type>
 		</Action>
+		
 		<Action id="162">
 			<Name>Chroma Weight NotAvailable</Name>
 			<On id="9">parameter</On>
 			<Type id="200">copy</Type>
 		</Action>
+		
 		<Action id="310">
 			<Name>Restore Enc Bitrate</Name>
 			<On id="7">parameter</On>
@@ -1155,9 +1208,6 @@ Any inquiries can be addressed to:
 			<Type id="62">copy</Type>
 		</Action>
 		
-
-
-
 		<Action id="350">
 			<Name>Encoder Data NotAvailable</Name>
 			<On id="7;8;9;10">parameter</On>
@@ -1175,51 +1225,56 @@ Any inquiries can be addressed to:
 			<On id="5">parameter</On>
 			<Type id="201">copy</Type>
 		</Action>
+		
 		<Action id="361">
 			<Name>Set Encoder Status Off</Name>
 			<On id="5">parameter</On>
 			<Type id="202">copy</Type>
 		</Action>
-
+		
 		<Action id="362">
 			<Name>Set Decoder Status On</Name>
 			<On id="6">parameter</On>
 			<Type id="201">copy</Type>
 		</Action>
+		
 		<Action id="363">
 			<Name>Set Decoder Status Off</Name>
 			<On id="6">parameter</On>
 			<Type id="202">copy</Type>
 		</Action>
+		
 		<Action id="373">
 			<Name>Force Encoder Toggle Off</Name>
 			<On id="55">parameter</On>
 			<Type id="202">copy</Type>
 		</Action>
+		
 		<Action id="374">
 			<Name>Force Decoder Toggle Off</Name>
 			<On id="56">parameter</On>
 			<Type id="202">copy</Type>
 		</Action>
-
-
-		<Action id="4100">
+		
+		<Action id="410">
 			<Name>Encoder Off Group</Name>
 			<On id="410">group</On>
 			<Type>execute next</Type>
 		</Action>
-		<Action id="4110">
+		
+		<Action id="411">
 			<Name>Encoder On Group</Name>
 			<On id="411">group</On>
 			<Type>execute next</Type>
 		</Action>
-
-		<Action id="4200">
+		
+		<Action id="420">
 			<Name>Decoder Off Group</Name>
 			<On id="420">group</On>
 			<Type>execute next</Type>
 		</Action>
-		<Action id="4210">
+		
+		<Action id="421">
 			<Name>Decoder On Group</Name>
 			<On id="421">group</On>
 			<Type>execute next</Type>
