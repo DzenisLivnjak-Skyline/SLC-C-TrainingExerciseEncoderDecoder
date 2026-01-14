@@ -2,7 +2,7 @@
 <!--
 
 ****************************************************************************
-*  Copyright (c) 2024,  Skyline Communications NV  All Rights Reserved.    *
+*  Copyright (c) 2026,  Skyline Communications NV  All Rights Reserved.    *
 ****************************************************************************
 
 By using this driver, you expressly agree with the usage terms and
@@ -139,10 +139,9 @@ Any inquiries can be addressed to:
 			<Description>After Startup</Description>
 			<Type>dummy</Type>
 		</Param>
-		
 		<Param id="5">
 			<Name>encoderStatus</Name>
-			<Description>Status</Description>
+			<Description>Encoder Status</Description>
 			<Type>read</Type>
 			<Information>
 				<Subtext>Indicates whether the Encoder is currently enabled or disabled.</Subtext>
@@ -179,7 +178,7 @@ Any inquiries can be addressed to:
 		</Param>
 		<Param id="55" setter="true">
 			<Name>encoderStatus</Name>
-			<Description>Status</Description>
+			<Description>Encoder Status</Description>
 			<Type>write</Type>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -211,7 +210,6 @@ Any inquiries can be addressed to:
 			</Measurement>
 		</Param>
 		
-		
 		<Param id="7" trending="true">
 			<Name>encoderCurrentCompressedBitrate</Name>
 			<Description>Current Compressed Bitrate</Description>
@@ -233,7 +231,7 @@ Any inquiries can be addressed to:
 				</Exceptions>
 			</Interprete>
 			<Alarm>
-				<Monitored>false</Monitored>
+				<Monitored>true</Monitored>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -275,7 +273,7 @@ Any inquiries can be addressed to:
 				</Exceptions>
 			</Interprete>
 			<Alarm>
-				<Monitored>false</Monitored>
+				<Monitored>true</Monitored>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -354,7 +352,7 @@ Any inquiries can be addressed to:
 				</Exceptions>
 			</Interprete>
 			<Alarm>
-				<Monitored>false</Monitored>
+				<Monitored>true</Monitored>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -424,7 +422,7 @@ Any inquiries can be addressed to:
 				</Exceptions>
 			</Interprete>
 			<Alarm>
-				<Monitored>false</Monitored>
+				<Monitored>true</Monitored>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -575,6 +573,9 @@ Any inquiries can be addressed to:
 					</Exception>
 				</Exceptions>
 			</Interprete>
+			<Alarm>
+				<Monitored>true</Monitored>
+			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Units>Mbps</Units>
@@ -614,6 +615,9 @@ Any inquiries can be addressed to:
 					</Exception>
 				</Exceptions>
 			</Interprete>
+			<Alarm>
+				<Monitored>true</Monitored>
+			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Positions>
@@ -716,6 +720,9 @@ Any inquiries can be addressed to:
 					</Exception>
 				</Exceptions>
 			</Interprete>
+			<Alarm>
+				<Monitored>true</Monitored>
+			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Units>px</Units>
@@ -754,6 +761,9 @@ Any inquiries can be addressed to:
 					</Exception>
 				</Exceptions>
 			</Interprete>
+			<Alarm>
+				<Monitored>true</Monitored>
+			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
 				<Units>px</Units>
@@ -872,7 +882,7 @@ Any inquiries can be addressed to:
 				<DefaultValue>500</DefaultValue>
 			</Interprete>
 		</Param>
-
+		
 		<Param id="215">
 			<Name>decProgOrderDummy</Name>
 			<Type>read</Type>
@@ -883,7 +893,7 @@ Any inquiries can be addressed to:
 				<DefaultValue>0</DefaultValue>
 			</Interprete>
 		</Param>
-
+		
 		<Param id="216">
 			<Name>decWidthDummy</Name>
 			<Type>read</Type>
@@ -894,7 +904,7 @@ Any inquiries can be addressed to:
 				<DefaultValue>64</DefaultValue>
 			</Interprete>
 		</Param>
-		
+
 		<Param id="217">
 			<Name>decHeightDummy</Name>
 			<Type>read</Type>
@@ -906,9 +916,13 @@ Any inquiries can be addressed to:
 			</Interprete>
 		</Param>
 		
+
+
+
 	</Params>
 
 	<QActions>
+
 	</QActions>
 
 	<Groups>
@@ -938,37 +952,48 @@ Any inquiries can be addressed to:
 			<Type>action</Type>
 			<Content>
 				<Action>360</Action>
+				<Action>374</Action>
+				<Action>4200</Action>
 				<Action>310</Action>
 				<Action>311</Action>
 				<Action>312</Action>
 				<Action>313</Action>
+				<Action>351</Action>
 			</Content>
 		</Group>
+
+
 
 		<Group id="420">
 			<Name>decoderOff</Name>
 			<Type>action</Type>
 			<Content>
-				<Action>340</Action>
 				<Action>341</Action>
-				<Action>342</Action>
-				<Action>343</Action>
 				<Action>363</Action>
 				<Action>351</Action>
 			</Content>
 		</Group>
+
+
+
+
 
 		<Group id="421">
 			<Name>decoderOn</Name>
 			<Type>action</Type>
 			<Content>
 				<Action>362</Action>
+				<Action>373</Action>
 				<Action>320</Action>
 				<Action>321</Action>
 				<Action>322</Action>
 				<Action>323</Action>
 			</Content>
 		</Group>
+
+
+
+
 
 
 
@@ -996,7 +1021,6 @@ Any inquiries can be addressed to:
 			</Content>
 		</Trigger>
 
-
 		<Trigger id="501">
 			<Name>Decoder Toggle</Name>
 			<On id="56">parameter</On>
@@ -1009,6 +1033,8 @@ Any inquiries can be addressed to:
 			</Content>
 		</Trigger>
 
+
+
 		<Trigger id="502">
 			<Name>Chroma Weight</Name>
 			<On id="58">parameter</On>
@@ -1016,9 +1042,19 @@ Any inquiries can be addressed to:
 			<Type>action</Type>
 			<Condition><![CDATA[id:58 == 0]]></Condition>
 			<Content>
-				<Id>372</Id>
+				<Id>332</Id>
 				<Id>162</Id>
 				<Id else="true">312</Id>
+			</Content>
+		</Trigger>
+
+		<Trigger id="503">
+			<Name>Save Decoder Progression Order</Name>
+			<On id="62">parameter</On>
+			<Time>change</Time>
+			<Type>action</Type>
+			<Content>
+				<Id>341</Id>
 			</Content>
 		</Trigger>
 
@@ -1070,13 +1106,13 @@ Any inquiries can be addressed to:
 			<On id="11">parameter</On>
 			<Type id="214">copy</Type>
 		</Action>
-		
+
 		<Action id="321">
-			<Name>Restore Dec ProgOrder</Name>
+			<Name>Restore Progression Order</Name>
 			<On id="12">parameter</On>
 			<Type id="215">copy</Type>
 		</Action>
-		
+
 		<Action id="322">
 			<Name>Restore Dec Width</Name>
 			<On id="13">parameter</On>
@@ -1112,30 +1148,15 @@ Any inquiries can be addressed to:
 			<On id="213">parameter</On>
 			<Type id="10">copy</Type>
 		</Action>
-		
-		<Action id="340">
-			<Name>Save Dec Bitrate</Name>
-			<On id="214">parameter</On>
-			<Type id="11">copy</Type>
-		</Action>
-		
+
 		<Action id="341">
 			<Name>Save Dec ProgOrder</Name>
 			<On id="215">parameter</On>
-			<Type id="12">copy</Type>
+			<Type id="62">copy</Type>
 		</Action>
 		
-		<Action id="342">
-			<Name>Save Dec Width</Name>
-			<On id="216">parameter</On>
-			<Type id="13">copy</Type>
-		</Action>
-		
-		<Action id="343">
-			<Name>Save Dec Height</Name>
-			<On id="217">parameter</On>
-			<Type id="14">copy</Type>
-		</Action>
+
+
 
 		<Action id="350">
 			<Name>Encoder Data NotAvailable</Name>
@@ -1170,11 +1191,17 @@ Any inquiries can be addressed to:
 			<On id="6">parameter</On>
 			<Type id="202">copy</Type>
 		</Action>
-		<Action id="372">
-			<Name>Save Enc ChromaWeight (AutoChroma off)</Name>
-			<On id="212">parameter</On>
-			<Type id="9">copy</Type>
+		<Action id="373">
+			<Name>Force Encoder Toggle Off</Name>
+			<On id="55">parameter</On>
+			<Type id="202">copy</Type>
 		</Action>
+		<Action id="374">
+			<Name>Force Decoder Toggle Off</Name>
+			<On id="56">parameter</On>
+			<Type id="202">copy</Type>
+		</Action>
+
 
 		<Action id="4100">
 			<Name>Encoder Off Group</Name>
