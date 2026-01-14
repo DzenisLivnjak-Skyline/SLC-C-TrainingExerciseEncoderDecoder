@@ -60,14 +60,14 @@ public static class Parameter
 	public const int codeblockheight = 14;
 	/// <summary>PID: 210 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int bitratedummy_210 = 210;
+	public const int encodercurrentbitratedummy_210 = 210;
 	/// <summary>PID: 210 | Type: read</summary>
-	public const int bitratedummy = 210;
+	public const int encodercurrentbitratedummy = 210;
 	/// <summary>PID: 211 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int autchromadummy_211 = 211;
+	public const int autochromadummy_211 = 211;
 	/// <summary>PID: 211 | Type: read</summary>
-	public const int autchromadummy = 211;
+	public const int autochromadummy = 211;
 	/// <summary>PID: 212 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public const int chromaweightdummy_212 = 212;
@@ -75,29 +75,29 @@ public static class Parameter
 	public const int chromaweightdummy = 212;
 	/// <summary>PID: 213 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int lossless_213 = 213;
+	public const int losslessdummy_213 = 213;
 	/// <summary>PID: 213 | Type: read</summary>
-	public const int lossless = 213;
+	public const int losslessdummy = 213;
 	/// <summary>PID: 214 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int decbitratedummy_214 = 214;
+	public const int decoderbitratedummy_214 = 214;
 	/// <summary>PID: 214 | Type: read</summary>
-	public const int decbitratedummy = 214;
+	public const int decoderbitratedummy = 214;
 	/// <summary>PID: 215 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int decprogorderdummy_215 = 215;
+	public const int decoderprogressionorderdummy_215 = 215;
 	/// <summary>PID: 215 | Type: read</summary>
-	public const int decprogorderdummy = 215;
+	public const int decoderprogressionorderdummy = 215;
 	/// <summary>PID: 216 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int decwidthdummy_216 = 216;
+	public const int decoderwidthdummy_216 = 216;
 	/// <summary>PID: 216 | Type: read</summary>
-	public const int decwidthdummy = 216;
+	public const int decoderwidthdummy = 216;
 	/// <summary>PID: 217 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int decheightdummy_217 = 217;
+	public const int decoderheightdummy_217 = 217;
 	/// <summary>PID: 217 | Type: read</summary>
-	public const int decheightdummy = 217;
+	public const int decoderheightdummy = 217;
 	public class Write
 	{
 		/// <summary>PID: 55 | Type: write</summary>
@@ -187,23 +187,22 @@ public interface SLProtocolExt : SLProtocol
 	object Fixedminusone__fixed { get; set; }
 	object Fixedone__fixed { get; set; }
 	object Fixedzero__fixed { get; set; }
-	object Bitratedummy_210 { get; set; }
-	object Bitratedummy { get; set; }
-	object Autchromadummy_211 { get; set; }
-	object Autchromadummy { get; set; }
+	object Encodercurrentbitratedummy_210 { get; set; }
+	object Encodercurrentbitratedummy { get; set; }
+	object Autochromadummy_211 { get; set; }
+	object Autochromadummy { get; set; }
 	object Chromaweightdummy_212 { get; set; }
 	object Chromaweightdummy { get; set; }
-	object Lossless_213 { get; set; }
-	object Lossless { get; set; }
-	object Decbitratedummy_214 { get; set; }
-	object Decbitratedummy { get; set; }
-	object Decprogorderdummy_215 { get; set; }
-	object Decprogorderdummy { get; set; }
-	object Decwidthdummy_216 { get; set; }
-	object Decwidthdummy { get; set; }
-	object Decheightdummy_217 { get; set; }
-	object Decheightdummy { get; set; }
-	object Afterstartup_dummy { get; set; }
+	object Losslessdummy_213 { get; set; }
+	object Losslessdummy { get; set; }
+	object Decoderbitratedummy_214 { get; set; }
+	object Decoderbitratedummy { get; set; }
+	object Decoderprogressionorderdummy_215 { get; set; }
+	object Decoderprogressionorderdummy { get; set; }
+	object Decoderwidthdummy_216 { get; set; }
+	object Decoderwidthdummy { get; set; }
+	object Decoderheightdummy_217 { get; set; }
+	object Decoderheightdummy { get; set; }
 	WriteParameters Write { get; set; }
 }
 public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
@@ -292,14 +291,14 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Fixedzero__fixed {get { return GetParameter(202); }set { SetParameter(202, value); }}
 	/// <summary>PID: 210  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Bitratedummy_210 {get { return GetParameter(210); }set { SetParameter(210, value); }}
+	public System.Object Encodercurrentbitratedummy_210 {get { return GetParameter(210); }set { SetParameter(210, value); }}
 	/// <summary>PID: 210  | Type: read</summary>
-	public System.Object Bitratedummy {get { return GetParameter(210); }set { SetParameter(210, value); }}
+	public System.Object Encodercurrentbitratedummy {get { return GetParameter(210); }set { SetParameter(210, value); }}
 	/// <summary>PID: 211  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Autchromadummy_211 {get { return GetParameter(211); }set { SetParameter(211, value); }}
+	public System.Object Autochromadummy_211 {get { return GetParameter(211); }set { SetParameter(211, value); }}
 	/// <summary>PID: 211  | Type: read</summary>
-	public System.Object Autchromadummy {get { return GetParameter(211); }set { SetParameter(211, value); }}
+	public System.Object Autochromadummy {get { return GetParameter(211); }set { SetParameter(211, value); }}
 	/// <summary>PID: 212  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Chromaweightdummy_212 {get { return GetParameter(212); }set { SetParameter(212, value); }}
@@ -307,31 +306,29 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Chromaweightdummy {get { return GetParameter(212); }set { SetParameter(212, value); }}
 	/// <summary>PID: 213  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Lossless_213 {get { return GetParameter(213); }set { SetParameter(213, value); }}
+	public System.Object Losslessdummy_213 {get { return GetParameter(213); }set { SetParameter(213, value); }}
 	/// <summary>PID: 213  | Type: read</summary>
-	public System.Object Lossless {get { return GetParameter(213); }set { SetParameter(213, value); }}
+	public System.Object Losslessdummy {get { return GetParameter(213); }set { SetParameter(213, value); }}
 	/// <summary>PID: 214  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Decbitratedummy_214 {get { return GetParameter(214); }set { SetParameter(214, value); }}
+	public System.Object Decoderbitratedummy_214 {get { return GetParameter(214); }set { SetParameter(214, value); }}
 	/// <summary>PID: 214  | Type: read</summary>
-	public System.Object Decbitratedummy {get { return GetParameter(214); }set { SetParameter(214, value); }}
+	public System.Object Decoderbitratedummy {get { return GetParameter(214); }set { SetParameter(214, value); }}
 	/// <summary>PID: 215  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Decprogorderdummy_215 {get { return GetParameter(215); }set { SetParameter(215, value); }}
+	public System.Object Decoderprogressionorderdummy_215 {get { return GetParameter(215); }set { SetParameter(215, value); }}
 	/// <summary>PID: 215  | Type: read</summary>
-	public System.Object Decprogorderdummy {get { return GetParameter(215); }set { SetParameter(215, value); }}
+	public System.Object Decoderprogressionorderdummy {get { return GetParameter(215); }set { SetParameter(215, value); }}
 	/// <summary>PID: 216  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Decwidthdummy_216 {get { return GetParameter(216); }set { SetParameter(216, value); }}
+	public System.Object Decoderwidthdummy_216 {get { return GetParameter(216); }set { SetParameter(216, value); }}
 	/// <summary>PID: 216  | Type: read</summary>
-	public System.Object Decwidthdummy {get { return GetParameter(216); }set { SetParameter(216, value); }}
+	public System.Object Decoderwidthdummy {get { return GetParameter(216); }set { SetParameter(216, value); }}
 	/// <summary>PID: 217  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Decheightdummy_217 {get { return GetParameter(217); }set { SetParameter(217, value); }}
+	public System.Object Decoderheightdummy_217 {get { return GetParameter(217); }set { SetParameter(217, value); }}
 	/// <summary>PID: 217  | Type: read</summary>
-	public System.Object Decheightdummy {get { return GetParameter(217); }set { SetParameter(217, value); }}
-	/// <summary>PID: 1000  | Type: dummy</summary>
-	public System.Object Afterstartup_dummy {get { return GetParameter(1000); }set { SetParameter(1000, value); }}
+	public System.Object Decoderheightdummy {get { return GetParameter(217); }set { SetParameter(217, value); }}
 	public WriteParameters Write { get; set; }
 	public ConcreteSLProtocolExt()
 	{

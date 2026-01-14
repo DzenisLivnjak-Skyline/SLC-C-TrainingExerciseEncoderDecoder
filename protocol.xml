@@ -137,13 +137,6 @@ Any inquiries can be addressed to:
 				<Type options="end">title</Type>
 			</Measurement>
 		</Param>
-		
-		<Param id="1000">
-			<Name>AfterStartup</Name>
-			<Description>After Startup</Description>
-			<Type>dummy</Type>
-		</Param>
-		
 		<Param id="5">
 			<Name>encoderStatus</Name>
 			<Description>Encoder Status</Description>
@@ -242,7 +235,7 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
-				<Normal>550</Normal>
+				<Normal>150</Normal>
 				<CL>0</CL>
 				<MaL>1</MaL>
 				<MiL>2</MiL>
@@ -474,6 +467,7 @@ Any inquiries can be addressed to:
 					<Discreet>
 						<Display>Enabled</Display>
 						<Value>1</Value>
+						
 					</Discreet>
 				</Discreets>
 			</Measurement>
@@ -611,7 +605,7 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
-				<Normal>500</Normal>
+				<Normal>100</Normal>
 				<CL>0</CL>
 				<MaL>0.2</MaL>
 				<MiL>2</MiL>
@@ -856,7 +850,7 @@ Any inquiries can be addressed to:
 				<Type>double</Type>
 				<LengthType>fixed</LengthType>
 				<Length>2</Length>
-				<Value>-1</Value>
+				<DefaultValue>-1</DefaultValue>
 			</Interprete>
 		</Param>
 		
@@ -872,7 +866,7 @@ Any inquiries can be addressed to:
 				<Type>double</Type>
 				<LengthType>fixed</LengthType>
 				<Length>1</Length>
-				<Value>1</Value>
+				<DefaultValue>1</DefaultValue>
 			</Interprete>
 		</Param>
 		
@@ -888,12 +882,12 @@ Any inquiries can be addressed to:
 				<Type>double</Type>
 				<LengthType>fixed</LengthType>
 				<Length>1</Length>
-				<Value>0</Value>
+				<DefaultValue>0</DefaultValue>
 			</Interprete>
 		</Param>
 		
 		<Param id="210">
-			<Name>bitrateDummy</Name>
+			<Name>encoderCurrentBitrateDummy</Name>
 			<Type>read</Type>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -905,7 +899,7 @@ Any inquiries can be addressed to:
 		</Param>
 		
 		<Param id="211">
-			<Name>autChromaDummy</Name>
+			<Name>autoChromaDummy</Name>
 			<Type>read</Type>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -927,7 +921,7 @@ Any inquiries can be addressed to:
 		</Param>
 		
 		<Param id="213">
-			<Name>lossLess</Name>
+			<Name>lossLessDummy</Name>
 			<Type>read</Type>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -938,7 +932,7 @@ Any inquiries can be addressed to:
 		</Param>
 		
 		<Param id="214">
-			<Name>decBitrateDummy</Name>
+			<Name>decoderBitrateDummy</Name>
 			<Type>read</Type>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -950,7 +944,7 @@ Any inquiries can be addressed to:
 		</Param>
 		
 		<Param id="215">
-			<Name>decProgOrderDummy</Name>
+			<Name>decoderProgressionOrderDummy</Name>
 			<Type>read</Type>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -961,7 +955,7 @@ Any inquiries can be addressed to:
 		</Param>
 		
 		<Param id="216">
-			<Name>decWidthDummy</Name>
+			<Name>decoderWidthDummy</Name>
 			<Type>read</Type>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -972,7 +966,7 @@ Any inquiries can be addressed to:
 		</Param>
 
 		<Param id="217">
-			<Name>decHeightDummy</Name>
+			<Name>decoderHeightDummy</Name>
 			<Type>read</Type>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -1131,31 +1125,31 @@ Any inquiries can be addressed to:
 		</Action>
 		
 		<Action id="310">
-			<Name>Restore Enc Bitrate</Name>
+			<Name>Restore Encoder Bitrate</Name>
 			<On id="7">parameter</On>
 			<Type id="210">copy</Type>
 		</Action>
 		
 		<Action id="311">
-			<Name>Restore Enc AutoChroma</Name>
+			<Name>Restore Encoder AutoChroma</Name>
 			<On id="8">parameter</On>
 			<Type id="211">copy</Type>
 		</Action>
 		
 		<Action id="312">
-			<Name>Restore Enc ChromaWeight</Name>
+			<Name>Restore Encoder ChromaWeight</Name>
 			<On id="9">parameter</On>
 			<Type id="212">copy</Type>
 		</Action>
 		
 		<Action id="313">
-			<Name>Restore Enc Lossless</Name>
+			<Name>Restore Encoder Lossless</Name>
 			<On id="10">parameter</On>
 			<Type id="213">copy</Type>
 		</Action>
 		
 		<Action id="320">
-			<Name>Restore Dec Bitrate</Name>
+			<Name>Restore Decoder Bitrate</Name>
 			<On id="11">parameter</On>
 			<Type id="214">copy</Type>
 		</Action>
@@ -1167,43 +1161,43 @@ Any inquiries can be addressed to:
 		</Action>
 
 		<Action id="322">
-			<Name>Restore Dec Width</Name>
+			<Name>Restore Decoder Width</Name>
 			<On id="13">parameter</On>
 			<Type id="216">copy</Type>
 		</Action>
 		
 		<Action id="323">
-			<Name>Restore Dec Height</Name>
+			<Name>Restore Decoder Height</Name>
 			<On id="14">parameter</On>
 			<Type id="217">copy</Type>
 		</Action>
 		
 		<Action id="330">
-			<Name>Save Enc Bitrate</Name>
+			<Name>Save Encoder Bitrate</Name>
 			<On id="210">parameter</On>
 			<Type id="7">copy</Type>
 		</Action>
 		
 		<Action id="331">
-			<Name>Save Enc AutoChroma</Name>
+			<Name>Save Encoder AutoChroma</Name>
 			<On id="211">parameter</On>
 			<Type id="8">copy</Type>
 		</Action>
 		
 		<Action id="332">
-			<Name>Save Enc ChromaWeight</Name>
+			<Name>Save Encoder ChromaWeight</Name>
 			<On id="212">parameter</On>
 			<Type id="9">copy</Type>
 		</Action>
 		
 		<Action id="333">
-			<Name>Save Enc Lossless</Name>
+			<Name>Save Encoder Lossless</Name>
 			<On id="213">parameter</On>
 			<Type id="10">copy</Type>
 		</Action>
 
 		<Action id="341">
-			<Name>Save Dec ProgOrder</Name>
+			<Name>Save Decoder ProgOrder</Name>
 			<On id="215">parameter</On>
 			<Type id="62">copy</Type>
 		</Action>
