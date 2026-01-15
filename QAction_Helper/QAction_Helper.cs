@@ -58,6 +58,16 @@ public static class Parameter
 	public const int codeblockheight_14 = 14;
 	/// <summary>PID: 14 | Type: read</summary>
 	public const int codeblockheight = 14;
+	/// <summary>PID: 15 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int encoderstatuspage_15 = 15;
+	/// <summary>PID: 15 | Type: read</summary>
+	public const int encoderstatuspage = 15;
+	/// <summary>PID: 16 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int decoderstatuspage_16 = 16;
+	/// <summary>PID: 16 | Type: read</summary>
+	public const int decoderstatuspage = 16;
 	/// <summary>PID: 210 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public const int encodercurrentbitratedummy_210 = 210;
@@ -178,6 +188,10 @@ public interface SLProtocolExt : SLProtocol
 	object Codeblockwidth { get; set; }
 	object Codeblockheight_14 { get; set; }
 	object Codeblockheight { get; set; }
+	object Encoderstatuspage_15 { get; set; }
+	object Encoderstatuspage { get; set; }
+	object Decoderstatuspage_16 { get; set; }
+	object Decoderstatuspage { get; set; }
 	object Encoderstatus_55 { get; set; }
 	object Decoderstatus_56 { get; set; }
 	object Autochromaweight_58 { get; set; }
@@ -265,6 +279,16 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Codeblockheight_14 {get { return GetParameter(14); }set { SetParameter(14, value); }}
 	/// <summary>PID: 14  | Type: read | EXCEPTIONS: Not Available = -1</summary>
 	public System.Object Codeblockheight {get { return GetParameter(14); }set { SetParameter(14, value); }}
+	/// <summary>PID: 15  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Encoderstatuspage_15 {get { return GetParameter(15); }set { SetParameter(15, value); }}
+	/// <summary>PID: 15  | Type: read</summary>
+	public System.Object Encoderstatuspage {get { return GetParameter(15); }set { SetParameter(15, value); }}
+	/// <summary>PID: 16  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Decoderstatuspage_16 {get { return GetParameter(16); }set { SetParameter(16, value); }}
+	/// <summary>PID: 16  | Type: read</summary>
+	public System.Object Decoderstatuspage {get { return GetParameter(16); }set { SetParameter(16, value); }}
 	/// <summary>PID: 55  | Type: write | DISCREETS: Disabled = 0, Enabled = 1</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Encoderstatus_55 {get { return GetParameter(55); }set { SetParameter(55, value); }}
